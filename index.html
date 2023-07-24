@@ -24,6 +24,11 @@
             --red-color:#e74c3c;
             --font-title:2rem;
             --font-size:1rem;
+            --clock-size:400px;
+            --number-size:30px;
+            --hour-hand:100px;
+            --minute-hand:120px;
+            --second-hand:130px;
         }
         body{
             display: flex;
@@ -44,8 +49,8 @@
         }
         .container .clock{
             display: flex;
-            height: 400px;
-            width: 400px;
+            height: var(--clock-size);
+            width: var(--clock-size);
             background-color: var(--white-color);
             box-shadow: 0 15px 25px rgba(0,0,0,.25);
             border-radius: 50%;
@@ -61,7 +66,7 @@
         }
         .clock label span{
             display: inline-block;
-            font-size: 30px;
+            font-size: var(--number-size);
             font-weight: 600;
             color: var(--black-color);
             transform: rotate(calc(var(--i) * (-360deg / 12))); 
@@ -87,7 +92,7 @@
         }
         .indicator .hand{
             position: absolute;
-            height: 130px;
+            height: var(--second-hand);
             width: 5px;
             background-color: var(--red-color);
             bottom: 0;
@@ -96,13 +101,13 @@
 
         }
         .hand.minute{
-            height: 120px;
+            height: var(--minute-hand);
             width: 5px;
             background-color: var(--black-color);
             transform: rotate(45deg);
         }
         .hand.hour{
-            height: 100px;
+            height: var(--hour-hand);
             width: 8px;
             background-color: var(--black-color);
         }
@@ -125,6 +130,14 @@
             :root{
                 --font-size:.7rem;
                 --font-title:1.5rem;
+                --clock-size:300px;
+                --number-size:18px;
+                --hour-hand:80px;
+                --second-hand:110px;
+                --minute-hand:90px;
+                .hour.hand{
+                    width: 6px;
+                }
             }
         }
     </style>
@@ -136,41 +149,41 @@
         <h3 class="title">Bây giờ là mấy giờ rồi!</h3>
         <div class="clock">
             <label for="" style="--i: 1">
-                <span>1</span>
+                <span>I</span>
             </label>
             <!--  -->
             <label for="" style="--i: 2">
-                <span>2</span>
+                <span>II</span>
             </label>
             <label for="" style="--i: 3">
-                <span>3</span>
+                <span>III</span>
             </label>
             <label for="" style="--i: 4">
-                <span>4</span>
+                <span>IV</span>
             </label>
             <label for="" style="--i: 5">
-                <span>5</span>
+                <span>V</span>
             </label>
             <label for="" style="--i: 6">
-                <span>6</span>
+                <span>VI</span>
             </label>
             <label for="" style="--i: 7">
-                <span>7</span>
+                <span>VII</span>
             </label>
             <label for="" style="--i: 8">
-                <span>8</span>
+                <span>VIII</span>
             </label>
             <label for="" style="--i: 9">
-                <span>9</span>
+                <span>IX</span>
             </label>
             <label for="" style="--i: 10">
-                <span>10</span>
+                <span>X</span>
             </label>
             <label for="" style="--i: 11">
-                <span>11</span>
+                <span>XI</span>
             </label>
             <label for="" style="--i: 12">
-                <span>12</span>
+                <span>XII</span>
             </label>
             
 
@@ -179,6 +192,7 @@
                 <div class="hand minute"></div>
                 <div class="hand second"></div>
             </div>
+            
         </div>
         <div class="digitalClock">
             <div class="hourNumber">
